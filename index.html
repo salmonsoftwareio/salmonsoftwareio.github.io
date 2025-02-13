@@ -16,20 +16,30 @@
             <li><a href="#home">Home</a></li>
             <li><a href="#services">Services</a></li>
             <li><a href="#about">About</a></li>
-            <li><a href="#contact">Contact</a></li>
         </ul>
     </nav>
 
     <header id="home">
         <div class="hero">
             <div class="hero-content">
-                <h1>Crafting Digital Adventures</h1>
+                <h1>Crafting Digital <span class="highlight">Adventures</span></h1>
                 <h2>Where Innovation Meets Play</h2>
                 <p>Creating immersive gaming experiences that bring stories to life and communities together</p>
+                <div class="cta-group">
+                    <a href="#games" class="cta-button primary">Explore Games</a>
+                </div>
                 <div class="featured-badges">
                     <div class="badge">
                         <i class="fab fa-android"></i>
-                        <span class="label">Available on Android</span>
+                        <span class="label">Android</span>
+                    </div>
+                    <div class="badge">
+                        <i class="fas fa-gamepad"></i>
+                        <span class="label">Gaming</span>
+                    </div>
+                    <div class="badge">
+                        <i class="fas fa-mobile-alt"></i>
+                        <span class="label">Mobile First</span>
                     </div>
                 </div>
             </div>
@@ -41,7 +51,9 @@
         <div class="services-grid">
             <div class="service-card">
                 <div class="game-image">
-                    <img src="jigsaw-puzzle.jpg" alt="Jigsaw Puzzles">
+                    <img src="jigsaw.png" 
+                         alt="Puzzle Piece"
+                         onerror="this.src='data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA1MTIgNTEyIiBmaWxsPSIjMDBCODk0Ij48cGF0aCBkPSJNMzg0IDI4OGgtMzAuNGMtNy4yLTI3LjQtMzItNDgtNjEuNi00OHMtNTQuNCAyMC42LTYxLjYgNDhIMjAwdi04MGg0OGM0NC4yIDAgODAtMzUuOCA4MC04MFYxMjhoMzJjMzUuMyAwIDY0LTI4LjcgNjQtNjRTMzk1LjMgMCAzNjAgMEgxNTJjLTM1LjMgMC02NCAyOC43LTY0IDY0czI4LjcgNjQgNjRoMzJ2NDhoLTgwYy00NC4yIDAtODAgMzUuOC04MCA4MHM1NS44IDgwIDgwIDgwaDQ4djgwSDEyOGMtMzUuMyAwLTY0IDI4LjctNjQgNjRzMjguNyA2NCA2NCA2NGgyMDhjMzUuMyAwIDY0LTI4LjcgNjQtNjRzLTI4LjctNjQtNjQtNjR6Ii8+PC9zdmc+'" />
                     <div class="game-overlay">
                         <span class="platform"><i class="fab fa-android"></i> Android</span>
                     </div>
@@ -51,7 +63,6 @@
                 <div class="game-meta">
                     <span><i class="fas fa-user"></i> Single Player</span>
                     <span><i class="fas fa-brain"></i> Puzzle</span>
-                    <span><i class="fas fa-star"></i> 4.5</span>
                 </div>
             </div>
         </div>
@@ -60,16 +71,6 @@
     <section id="about">
         <h2>About Us</h2>
         <p>Salmon Software is committed to delivering robust, scalable solutions that help businesses thrive in the digital age.</p>
-    </section>
-
-    <section id="contact">
-        <h2>Contact Us</h2>
-        <form id="contact-form">
-            <input type="text" placeholder="Name" required>
-            <input type="email" placeholder="Email" required>
-            <textarea placeholder="Message" required></textarea>
-            <button type="submit">Send Message</button>
-        </form>
     </section>
 
     <footer>

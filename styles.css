@@ -3,6 +3,8 @@
     --secondary-color: #00B894;
     --accent-color: #FD79A8;
     --light-color: #F8F9FA;
+    --dark-gradient: linear-gradient(135deg, #2D3436 0%, #1a1f20 100%);
+    --glow-effect: 0 0 20px rgba(0, 184, 148, 0.3);
     --gradient-1: linear-gradient(135deg, #00B894, #00CEC9);
     --gradient-2: linear-gradient(135deg, #FD79A8, #E84393);
     --box-shadow: 0 10px 30px rgba(0,0,0,0.1);
@@ -66,15 +68,14 @@ nav {
 .nav-links li a {
     color: var(--light-color);
     text-decoration: none;
-    padding: 0.5rem 1rem;
+    padding: 0.8rem 1.5rem;
     transition: all 0.3s ease;
     font-weight: 500;
     position: relative;
     font-size: 0.95rem;
     text-transform: uppercase;
-    letter-spacing: 1px;
-    display: flex;
-    align-items: center;
+    letter-spacing: 1.2px;
+    border-radius: 4px;
 }
 
 .nav-links li a::after {
@@ -90,6 +91,7 @@ nav {
 }
 
 .nav-links li a:hover {
+    background: rgba(0, 184, 148, 0.1);
     color: var(--secondary-color);
 }
 
@@ -141,12 +143,14 @@ header {
 }
 
 .hero-content {
-    background: rgba(0, 0, 0, 0.5);
-    padding: 3rem;
+    background: rgba(0, 0, 0, 0.7);
+    padding: 4rem;
     border-radius: 20px;
     backdrop-filter: blur(10px);
     border: 1px solid rgba(255, 255, 255, 0.1);
     animation: fadeIn 1s ease-out;
+    max-width: 900px;
+    margin: 0 auto;
 }
 
 .hero h1 {
@@ -154,8 +158,13 @@ header {
     font-weight: 800;
     margin-bottom: 1rem;
     color: #ffffff;
-    text-shadow: 0 0 20px rgba(0,184,148,0.5);
+    text-shadow: var(--glow-effect);
     line-height: 1.2;
+}
+
+.hero h1 .highlight {
+    color: var(--secondary-color);
+    text-shadow: var(--glow-effect);
 }
 
 .hero h2 {
@@ -251,7 +260,7 @@ section {
 .service-card {
     text-align: center;
     padding: 2.5rem;
-    background: rgba(45, 52, 54, 0.95);
+    background: var(--dark-gradient);
     border-radius: 20px;
     box-shadow: 0 0 30px rgba(0, 184, 148, 0.1);
     border: 1px solid rgba(0, 184, 148, 0.2);
@@ -260,6 +269,7 @@ section {
     color: var(--light-color);
     position: relative;
     overflow: hidden;
+    transform: translateY(0);
 }
 
 .service-card::before {
@@ -276,7 +286,7 @@ section {
 
 .service-card:hover {
     transform: translateY(-10px);
-    box-shadow: 0 15px 40px rgba(0, 184, 148, 0.2);
+    box-shadow: var(--glow-effect);
 }
 
 .service-card:hover::before {
@@ -325,28 +335,20 @@ section {
 }
 
 #contact-form {
-    max-width: 700px;
-    margin: 0 auto;
-    display: grid;
-    gap: 1.5rem;
-    background: rgba(45, 52, 54, 0.95);
-    padding: 3rem;
+    background: var(--dark-gradient);
+    padding: 3.5rem;
     border-radius: 20px;
-    box-shadow: var(--box-shadow);
-    border: 1px solid rgba(0, 184, 148, 0.2);
-    backdrop-filter: blur(10px);
-    color: var(--light-color);
+    box-shadow: var(--glow-effect);
 }
 
 #contact-form input,
 #contact-form textarea {
-    padding: 1rem;
-    border: 2px solid rgba(0, 184, 148, 0.2);
-    border-radius: 10px;
-    font-size: 1rem;
-    transition: all 0.3s ease;
-    background: rgba(45, 52, 54, 0.95);
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(0, 184, 148, 0.2);
+    border-radius: 8px;
+    padding: 1.2rem;
     color: var(--light-color);
+    transition: all 0.3s ease;
 }
 
 #contact-form input::placeholder,
@@ -362,20 +364,18 @@ section {
 }
 
 #contact-form button {
-    padding: 1.2rem;
     background: var(--gradient-1);
-    color: white;
-    border: none;
-    border-radius: 10px;
-    font-size: 1.1rem;
+    padding: 1.2rem 2rem;
+    border-radius: 8px;
     font-weight: 600;
-    cursor: pointer;
+    letter-spacing: 1px;
+    text-transform: uppercase;
     transition: all 0.3s ease;
 }
 
 #contact-form button:hover {
     transform: translateY(-2px);
-    box-shadow: 0 5px 15px rgba(0,184,148,0.3);
+    box-shadow: var(--glow-effect);
 }
 
 footer {
@@ -465,21 +465,6 @@ footer {
     transform: scale(1.05);
 }
 
-.service-card {
-    background: rgba(45, 52, 54, 0.95);
-    border-radius: 20px;
-    padding: 1.5rem;
-    transition: all 0.3s ease;
-    border: 1px solid rgba(0, 184, 148, 0.2);
-    backdrop-filter: blur(10px);
-}
-
-.service-card:hover {
-    transform: translateY(-10px);
-    box-shadow: 0 15px 40px rgba(0, 184, 148, 0.2);
-    border-color: rgba(0, 184, 148, 0.4);
-}
-
 .game-meta {
     display: flex;
     justify-content: center;
@@ -499,4 +484,9 @@ footer {
 
 .game-meta i {
     color: var(--secondary-color);
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
 } 
