@@ -283,7 +283,7 @@ section {
 
 .service-card {
     display: grid;
-    grid-template-columns: 400px 1fr;
+    grid-template-columns: minmax(200px, 300px) 1fr;
     gap: 3rem;
     text-align: left;
     align-items: center;
@@ -299,6 +299,13 @@ section {
 
 .game-info-left {
     flex: 1;
+    max-width: 100%;
+}
+
+.game-info-left p {
+    max-width: 600px;
+    overflow-wrap: break-word;
+    word-wrap: break-word;
 }
 
 .game-info-right {
@@ -511,7 +518,11 @@ footer {
     
     .service-card {
         grid-template-columns: 1fr;
-        text-align: center;
+        gap: 2rem;
+    }
+    
+    .game-image {
+        margin: 0 auto;
     }
     
     .game-info {
@@ -538,11 +549,13 @@ footer {
     overflow: hidden;
     border-radius: 15px;
     margin-bottom: 0.5rem;
+    width: 100%;
+    max-width: 300px;
 }
 
 .game-image img {
     width: 100%;
-    height: 250px;
+    height: 200px;
     object-fit: cover;
     transition: transform 0.5s ease;
 }
