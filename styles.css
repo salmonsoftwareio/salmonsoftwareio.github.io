@@ -134,6 +134,8 @@ header {
     position: relative;
     overflow: hidden;
     padding-top: 80px;
+    padding-left: 5%;
+    padding-right: 5%;
 }
 
 .hero {
@@ -300,12 +302,14 @@ section {
 .game-info-left {
     flex: 1;
     max-width: 100%;
+    text-align: center;
 }
 
 .game-info-left p {
     max-width: 600px;
     overflow-wrap: break-word;
     word-wrap: break-word;
+    margin: 0 auto;
 }
 
 .game-info-right {
@@ -332,6 +336,7 @@ section {
     display: flex;
     gap: 1.5rem;
     margin-top: 1rem;
+    justify-content: center;
 }
 
 .game-status {
@@ -411,6 +416,7 @@ section {
     gap: 0.5rem;
     font-size: 0.9rem;
     color: rgba(255, 255, 255, 0.7);
+    justify-content: center;
 }
 
 .game-meta i {
