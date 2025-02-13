@@ -17,13 +17,16 @@
 body {
     font-family: 'Arial', sans-serif;
     line-height: 1.6;
+    background: linear-gradient(135deg, rgba(0,0,0,0.95), rgba(0,0,0,0.85));
+    color: var(--light-color);
+    min-height: 100vh;
 }
 
 nav {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 1.2rem 8%;
+    padding: 1.2rem 5%;
     background: rgba(45, 52, 54, 0.95);
     backdrop-filter: blur(10px);
     box-shadow: 0 2px 20px rgba(0, 184, 148, 0.15);
@@ -36,7 +39,7 @@ nav {
 .logo {
     display: flex;
     align-items: center;
-    flex: 1;
+    margin-right: 2rem;
 }
 
 .logo-text {
@@ -54,9 +57,10 @@ nav {
 .nav-links {
     display: flex;
     list-style: none;
-    gap: 3rem;
-    flex: 2;
-    justify-content: center;
+    gap: 2rem;
+    margin: 0;
+    padding: 0;
+    align-items: center;
 }
 
 .nav-links li a {
@@ -69,6 +73,8 @@ nav {
     font-size: 0.95rem;
     text-transform: uppercase;
     letter-spacing: 1px;
+    display: flex;
+    align-items: center;
 }
 
 .nav-links li a::after {
@@ -121,18 +127,17 @@ header {
     display: flex;
     align-items: center;
     justify-content: center;
-    background: linear-gradient(135deg, rgba(0,0,0,0.9), rgba(0,0,0,0.7)), 
-                url('images/hero-bg.jpg');
     background-size: cover;
     background-position: center;
     position: relative;
     overflow: hidden;
+    padding-top: 80px;
 }
 
 .hero {
     width: 100%;
     max-width: 1200px;
-    padding: 0 2rem;
+    padding: 2rem;
 }
 
 .hero-content {
@@ -237,33 +242,86 @@ section {
 
 .services-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 2rem;
-    margin-top: 2rem;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2.5rem;
+    margin-top: 3rem;
+    padding: 0 2rem;
 }
 
 .service-card {
     text-align: center;
     padding: 2.5rem;
-    background: rgba(255, 255, 255, 0.95);
+    background: rgba(45, 52, 54, 0.95);
     border-radius: 20px;
-    box-shadow: var(--box-shadow);
-    border: 1px solid rgba(255, 255, 255, 0.2);
+    box-shadow: 0 0 30px rgba(0, 184, 148, 0.1);
+    border: 1px solid rgba(0, 184, 148, 0.2);
     backdrop-filter: blur(10px);
-    transition: all 0.3s ease;
+    transition: all 0.4s ease;
+    color: var(--light-color);
+    position: relative;
+    overflow: hidden;
+}
+
+.service-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(135deg, rgba(0, 184, 148, 0.1), rgba(0, 206, 201, 0.1));
+    opacity: 0;
+    transition: all 0.4s ease;
 }
 
 .service-card:hover {
     transform: translateY(-10px);
-    box-shadow: 0 15px 40px rgba(0,0,0,0.15);
+    box-shadow: 0 15px 40px rgba(0, 184, 148, 0.2);
 }
 
-.service-card i {
-    font-size: 3rem;
-    background: var(--gradient-1);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
+.service-card:hover::before {
+    opacity: 1;
+}
+
+.service-card img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 10px;
     margin-bottom: 1.5rem;
+    border: 2px solid rgba(0, 184, 148, 0.2);
+}
+
+.service-card h3 {
+    font-size: 1.8rem;
+    margin-bottom: 1rem;
+    color: var(--secondary-color);
+}
+
+.service-card p {
+    font-size: 1.1rem;
+    line-height: 1.6;
+    color: rgba(255, 255, 255, 0.8);
+    margin-bottom: 1.5rem;
+}
+
+.game-meta {
+    display: flex;
+    justify-content: center;
+    gap: 1.5rem;
+    margin-top: 1rem;
+}
+
+.game-meta span {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 0.9rem;
+    color: rgba(255, 255, 255, 0.7);
+}
+
+.game-meta i {
+    color: var(--secondary-color);
 }
 
 #contact-form {
@@ -271,19 +329,29 @@ section {
     margin: 0 auto;
     display: grid;
     gap: 1.5rem;
-    background: white;
+    background: rgba(45, 52, 54, 0.95);
     padding: 3rem;
     border-radius: 20px;
     box-shadow: var(--box-shadow);
+    border: 1px solid rgba(0, 184, 148, 0.2);
+    backdrop-filter: blur(10px);
+    color: var(--light-color);
 }
 
 #contact-form input,
 #contact-form textarea {
     padding: 1rem;
-    border: 2px solid #eee;
+    border: 2px solid rgba(0, 184, 148, 0.2);
     border-radius: 10px;
     font-size: 1rem;
     transition: all 0.3s ease;
+    background: rgba(45, 52, 54, 0.95);
+    color: var(--light-color);
+}
+
+#contact-form input::placeholder,
+#contact-form textarea::placeholder {
+    color: rgba(255, 255, 255, 0.5);
 }
 
 #contact-form input:focus,
@@ -318,6 +386,10 @@ footer {
 }
 
 @media (max-width: 768px) {
+    nav {
+        padding: 1rem 4%;
+    }
+    
     .nav-cta {
         display: none;
     }
@@ -350,5 +422,9 @@ footer {
     
     .hero-content {
         padding: 2rem;
+    }
+    
+    header {
+        padding-top: 60px;
     }
 } 
