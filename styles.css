@@ -272,11 +272,69 @@ section {
 }
 
 .services-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    max-width: 1200px;
+    margin: 3rem auto 0;
+}
+
+.service-card {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 2.5rem;
-    margin-top: 3rem;
-    padding: 0 2rem;
+    grid-template-columns: 300px 1fr;
+    gap: 2rem;
+    text-align: left;
+    align-items: center;
+}
+
+.game-info {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1.5rem 2rem;
+}
+
+.game-info-left {
+    flex: 1;
+}
+
+.game-info-right {
+    text-align: right;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 1rem;
+}
+
+.platform-icon {
+    font-size: 2.5rem;
+    color: var(--secondary-color);
+    margin-bottom: 0.5rem;
+}
+
+.release-date {
+    color: rgba(255, 255, 255, 0.7);
+    font-size: 1rem;
+    font-weight: 500;
+}
+
+.game-meta {
+    display: flex;
+    gap: 1.5rem;
+    margin-top: 1rem;
+}
+
+.game-status {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+    margin-bottom: 2rem;
+}
+
+.platform-icon {
+    font-size: 2rem;
+    color: var(--secondary-color);
 }
 
 .service-card {
@@ -335,13 +393,6 @@ section {
     line-height: 1.6;
     color: rgba(255, 255, 255, 0.8);
     margin-bottom: 1.5rem;
-}
-
-.game-meta {
-    display: flex;
-    justify-content: center;
-    gap: 1.5rem;
-    margin-top: 1rem;
 }
 
 .game-meta span {
@@ -449,13 +500,36 @@ footer {
     header {
         padding-top: 60px;
     }
+    
+    .service-card {
+        grid-template-columns: 1fr;
+        text-align: center;
+    }
+    
+    .game-info {
+        flex-direction: column;
+        gap: 2rem;
+        text-align: center;
+    }
+    
+    .game-info-right {
+        align-items: center;
+    }
+    
+    .game-meta {
+        justify-content: center;
+    }
+    
+    .game-status {
+        justify-content: center;
+    }
 }
 
 .game-image {
     position: relative;
     overflow: hidden;
     border-radius: 15px;
-    margin-bottom: 1.5rem;
+    margin-bottom: 0.5rem;
 }
 
 .game-image img {
@@ -487,27 +561,6 @@ footer {
     transform: scale(1.05);
 }
 
-.game-meta {
-    display: flex;
-    justify-content: center;
-    gap: 1.5rem;
-    margin-top: 1.5rem;
-    padding-top: 1.5rem;
-    border-top: 1px solid rgba(255, 255, 255, 0.1);
-}
-
-.game-meta span {
-    display: flex;
-    align-items: center;
-    gap: 0.5rem;
-    font-size: 0.9rem;
-    color: rgba(255, 255, 255, 0.8);
-}
-
-.game-meta i {
-    color: var(--secondary-color);
-}
-
 @keyframes fadeIn {
     from { opacity: 0; transform: translateY(20px); }
     to { opacity: 1; transform: translateY(0); }
@@ -524,7 +577,7 @@ footer {
 
 .about-container {
     background: rgba(0, 0, 0, 0.7);
-    padding: 6rem;
+    padding: 3rem;
     border-radius: 20px;
     backdrop-filter: blur(10px);
     border: 1px solid rgba(255, 255, 255, 0.1);
@@ -667,4 +720,67 @@ footer {
         margin-top: 3rem;
         padding: 1.5rem;
     }
+}
+
+.section-title {
+    text-align: center;
+    margin-bottom: 4rem;
+    position: relative;
+}
+
+.section-title h2 {
+    font-size: 3.5rem;
+    font-weight: 800;
+    color: var(--light-color);
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    margin-bottom: 1.5rem;
+    text-shadow: 0 0 15px rgba(0, 184, 148, 0.3);
+}
+
+.section-title h2 .highlight {
+    color: var(--secondary-color);
+}
+
+.title-underline {
+    width: 150px;
+    height: 4px;
+    background: var(--gradient-1);
+    margin: 0 auto;
+    border-radius: 2px;
+    position: relative;
+}
+
+.title-underline::before,
+.title-underline::after {
+    content: '';
+    position: absolute;
+    width: 8px;
+    height: 8px;
+    background: var(--secondary-color);
+    border-radius: 50%;
+    top: -2px;
+}
+
+.title-underline::before {
+    left: -4px;
+}
+
+.title-underline::after {
+    right: -4px;
+}
+
+@media (max-width: 768px) {
+    .section-title h2 {
+        font-size: 2.5rem;
+    }
+    
+    .title-underline {
+        width: 100px;
+    }
+}
+
+.company-name {
+    color: var(--secondary-color);
+    font-weight: 500;
 } 
