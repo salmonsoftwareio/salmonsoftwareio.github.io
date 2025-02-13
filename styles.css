@@ -144,13 +144,14 @@ header {
 
 .hero-content {
     background: rgba(0, 0, 0, 0.7);
-    padding: 4rem;
+    padding: 4.5rem;
     border-radius: 20px;
     backdrop-filter: blur(10px);
     border: 1px solid rgba(255, 255, 255, 0.1);
     animation: fadeIn 1s ease-out;
-    max-width: 900px;
+    max-width: 1000px;
     margin: 0 auto;
+    box-shadow: var(--glow-effect);
 }
 
 .hero h1 {
@@ -182,6 +183,18 @@ header {
     line-height: 1.6;
 }
 
+.hero-lead {
+    font-size: 1.3rem;
+    color: var(--light-color);
+    max-width: 800px;
+    margin: 0 auto 2.5rem;
+    line-height: 1.8;
+    text-align: center;
+    font-weight: 300;
+    position: relative;
+    padding: 0 1rem;
+}
+
 .cta-group {
     display: flex;
     gap: 1rem;
@@ -208,8 +221,14 @@ header {
 
 .cta-button.secondary {
     background: rgba(255, 255, 255, 0.1);
-    color: white;
-    border: 1px solid rgba(255, 255, 255, 0.2);
+    color: var(--light-color);
+    border: 1px solid rgba(0, 184, 148, 0.2);
+    backdrop-filter: blur(5px);
+}
+
+.cta-button.secondary:hover {
+    background: rgba(0, 184, 148, 0.1);
+    border-color: var(--secondary-color);
 }
 
 .cta-button:hover {
@@ -220,8 +239,10 @@ header {
 .featured-badges {
     display: flex;
     justify-content: center;
-    gap: 3rem;
-    margin-top: 2rem;
+    gap: 4rem;
+    margin-top: 3rem;
+    padding-top: 2rem;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
 }
 
 .badge {
@@ -230,9 +251,10 @@ header {
 }
 
 .badge i {
-    font-size: 2.5rem;
-    margin-bottom: 0.5rem;
-    transition: color 0.3s ease;
+    font-size: 2.8rem;
+    margin-bottom: 0.8rem;
+    transition: all 0.3s ease;
+    color: var(--secondary-color);
 }
 
 .badge:hover i {
@@ -489,4 +511,160 @@ footer {
 @keyframes fadeIn {
     from { opacity: 0; transform: translateY(20px); }
     to { opacity: 1; transform: translateY(0); }
+}
+
+.about-section {
+    padding-top: 120px;
+    max-width: 1400px;
+    margin: 0 auto;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+}
+
+.about-container {
+    background: rgba(0, 0, 0, 0.7);
+    padding: 6rem;
+    border-radius: 20px;
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    margin: 0 2rem;
+    box-shadow: var(--glow-effect);
+}
+
+.about-content {
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.about-section h1 {
+    font-size: 4.5rem;
+    color: var(--secondary-color);
+    margin-bottom: 3rem;
+    text-align: center;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    line-height: 1.2;
+    text-shadow: var(--glow-effect);
+}
+
+.lead {
+    font-size: 1.6rem;
+    color: var(--light-color);
+    margin-bottom: 4rem;
+    line-height: 1.8;
+    border-left: 4px solid var(--secondary-color);
+    padding-left: 2rem;
+    font-weight: 300;
+}
+
+.about-block {
+    margin-bottom: 4rem;
+    position: relative;
+}
+
+.about-block h2 {
+    color: var(--secondary-color);
+    font-size: 2.4rem;
+    margin-bottom: 2rem;
+    text-align: center;
+    position: relative;
+    padding-bottom: 1rem;
+}
+
+.about-block h2::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100px;
+    height: 3px;
+    background: var(--gradient-1);
+    border-radius: 2px;
+}
+
+.about-block p {
+    color: var(--light-color);
+    font-size: 1.2rem;
+    line-height: 2;
+    margin-bottom: 1.5rem;
+    text-align: justify;
+    font-weight: 300;
+}
+
+.values-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 3rem;
+    margin-top: 3rem;
+}
+
+.value-card {
+    text-align: center;
+    padding: 3rem;
+    background: var(--dark-gradient);
+    border-radius: 15px;
+    border: 1px solid rgba(0, 184, 148, 0.2);
+    transition: all 0.4s ease;
+}
+
+.value-card:hover {
+    transform: translateY(-5px);
+}
+
+.value-card i {
+    font-size: 3rem;
+    color: var(--secondary-color);
+    margin-bottom: 1.5rem;
+}
+
+.value-card h3 {
+    color: var(--light-color);
+    margin-bottom: 1.5rem;
+    font-size: 1.4rem;
+    letter-spacing: 1px;
+}
+
+.closing-statement {
+    font-size: 1.8rem;
+    color: var(--secondary-color);
+    text-align: center;
+    margin-top: 5rem;
+    font-weight: bold;
+    line-height: 1.6;
+    padding: 2rem;
+    border-top: 1px solid rgba(0, 184, 148, 0.2);
+    border-bottom: 1px solid rgba(0, 184, 148, 0.2);
+}
+
+@media (max-width: 768px) {
+    .about-container {
+        padding: 3rem;
+        margin: 0 1rem;
+    }
+
+    .about-section h1 {
+        font-size: 3rem;
+    }
+
+    .lead {
+        font-size: 1.3rem;
+        padding-left: 1.5rem;
+    }
+
+    .about-block h2 {
+        font-size: 2rem;
+    }
+
+    .values-grid {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+    }
+
+    .closing-statement {
+        font-size: 1.4rem;
+        margin-top: 3rem;
+        padding: 1.5rem;
+    }
 } 
