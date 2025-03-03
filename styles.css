@@ -132,10 +132,12 @@ nav {
 }
 
 .content-wrapper {
-    margin-top: calc(1.2rem * 2 + 1.6rem);
+    margin-top: var(--navbar-height);
     flex: 1;
     display: flex;
     flex-direction: column;
+    position: relative;
+    z-index: 1;
 }
 
 header {
@@ -303,6 +305,13 @@ section {
     text-align: left;
     align-items: center;
     padding: 3.5rem;
+    background: rgba(0, 0, 0, 0.5);
+    border-radius: 20px;
+    border: 1px solid rgba(0, 184, 148, 0.2);
+    position: relative;
+    z-index: 1;
+    margin-bottom: 2rem;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
 }
 
 .game-info {
@@ -363,42 +372,6 @@ section {
 .platform-icon {
     font-size: 2rem;
     color: var(--secondary-color);
-}
-
-.service-card {
-    text-align: center;
-    padding: 2.5rem;
-    background: var(--dark-gradient);
-    border-radius: 20px;
-    box-shadow: 0 0 30px rgba(0, 184, 148, 0.1);
-    border: 1px solid rgba(0, 184, 148, 0.2);
-    backdrop-filter: blur(10px);
-    transition: all 0.4s ease;
-    color: var(--light-color);
-    position: relative;
-    overflow: hidden;
-    transform: translateY(0);
-}
-
-.service-card::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: linear-gradient(135deg, rgba(0, 184, 148, 0.1), rgba(0, 206, 201, 0.1));
-    opacity: 0;
-    transition: all 0.4s ease;
-}
-
-.service-card:hover {
-    transform: translateY(-10px);
-    box-shadow: var(--glow-effect);
-}
-
-.service-card:hover::before {
-    opacity: 1;
 }
 
 .service-card img {
@@ -570,6 +543,9 @@ footer {
     margin-bottom: 1.5rem;
     width: 100%;
     max-width: 300px;
+    border: 2px solid rgba(0, 184, 148, 0.3);
+    box-shadow: var(--glow-effect);
+    z-index: 2;
 }
 
 .game-image img {
@@ -775,60 +751,30 @@ footer {
 
 .section-title {
     text-align: center;
-    margin-bottom: 4rem;
+    margin-bottom: 3rem;
     position: relative;
+    z-index: 1;
 }
 
 .section-title h2 {
     font-size: 3.5rem;
     font-weight: 800;
-    color: var(--light-color);
-    text-transform: uppercase;
-    letter-spacing: 2px;
-    margin-bottom: 1.5rem;
-    text-shadow: 0 0 15px rgba(0, 184, 148, 0.3);
+    color: white;
+    margin-bottom: 1rem;
+    position: relative;
+    z-index: 2;
 }
 
-.section-title h2 .highlight {
+.section-title .highlight {
     color: var(--secondary-color);
 }
 
 .title-underline {
-    width: 150px;
     height: 4px;
+    width: 80px;
     background: var(--gradient-1);
     margin: 0 auto;
     border-radius: 2px;
-    position: relative;
-}
-
-.title-underline::before,
-.title-underline::after {
-    content: '';
-    position: absolute;
-    width: 8px;
-    height: 8px;
-    background: var(--secondary-color);
-    border-radius: 50%;
-    top: -2px;
-}
-
-.title-underline::before {
-    left: -4px;
-}
-
-.title-underline::after {
-    right: -4px;
-}
-
-@media (max-width: 768px) {
-    .section-title h2 {
-        font-size: 2.5rem;
-    }
-    
-    .title-underline {
-        width: 100px;
-    }
 }
 
 .company-name {
@@ -852,5 +798,7 @@ footer {
 }
 
 #games {
-    padding-top: 4rem;
+    padding-top: 100px;
+    position: relative;
+    z-index: 1;
 } 
