@@ -854,4 +854,40 @@ footer {
 
 #games {
     padding-top: 4rem;
+}
+
+/* Privacy Policy Specific Styles */
+#privacy .about-block {
+    margin-bottom: 2.5rem;
+}
+
+#privacy h2 {
+    color: var(--secondary-color);
+    margin-bottom: 1rem;
+    font-size: 1.8rem;
+}
+
+#privacy .lead {
+    font-size: 1.2rem;
+    margin-bottom: 2rem;
+    color: var(--light-color);
+}
+
+.privacy-date {
+    color: var(--secondary-color);
+    font-style: italic;
+    text-align: center;
+    margin-top: 2rem;
+    font-size: 1rem;
+    opacity: 0.8;
+}
+
+#privacy a {
+    color: var(--secondary-color);
+    text-decoration: none;
+    transition: opacity 0.3s ease;
+}
+
+#privacy a:hover {
+    opacity: 0.8;
 } 
